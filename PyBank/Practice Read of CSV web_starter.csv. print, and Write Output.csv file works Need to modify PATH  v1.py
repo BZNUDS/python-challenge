@@ -33,7 +33,7 @@ print("")
 courses = zip(title, price, subscriber_count, num_reviews, course_length)
 
 # save the output file path
-output_file = os.path.join("output.csv")
+output_file = os.path.join('analysis', "output.csv")
 
 # open the output file, create a header row, and then write the zipped object to the csv
 with open(output_file, "w", encoding='utf-8', newline='') as datafile:
