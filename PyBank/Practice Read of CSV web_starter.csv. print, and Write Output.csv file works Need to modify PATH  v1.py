@@ -1,10 +1,8 @@
 import os
 import csv
 
-print("For homework can’t hardcode the CSV path (since Mac computers doesn’t have C: drive)")
 csvpath = os.path.join('Resources', 'web_starter.csv')
-#print(csvpath)
-print("csvpath= "), csvpath
+print(csvpath)
 
 title = []
 price = []
@@ -26,10 +24,7 @@ with open(csvpath, encoding='utf-8') as csvfile:
         subscriber_count.append(row[5])
         num_reviews.append(row[6])
         course_length.append(row[7])
-print("")
-print("*****************************************")
-print("For homework, can’t hardcode the CSV path (since Mac computers doesn’t have C: drive)")
-print("")
+
 courses = zip(title, price, subscriber_count, num_reviews, course_length)
 
 # save the output file path
