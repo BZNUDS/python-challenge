@@ -4,7 +4,7 @@ import csv
 print("For homework can’t hardcode the CSV path (since Mac computers doesn’t have C: drive)")
 csvpath = os.path.join('Resources', 'web_starter.csv')
 #print(csvpath)
-print("csvpath="), csvpath
+print("csvpath= "), csvpath
 
 title = []
 price = []
