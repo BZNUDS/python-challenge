@@ -22,21 +22,28 @@
 
 # In addition, your final script should both print the analysis to the terminal and export a text file with the results. Analysis that looks similar to below:
 
-
 import os
 import csv
+from re import I
 
 #Initialize variables
 total_votes=0  #Counts up number of actual votes (starts after header is read)
+candidates_lists=[]
+candidates_short_lists=[]
+candidates_count_lists=[]
+candidates_percent_lists=[]
 total_candidates=0
-candidates=[]
+current_index=0
+current_count=0
+i=0
+j=0
+max_votes=0
+max_votes_index=0
 winner=""
 
+#csvpath = os.path.join('Resources', 'mini_election_data.csv')  #Brian's test file
+csvpath = os.path.join('Resources', 'election_data.csv')
 print("")
-print("Need to change hardcoded csvpath from mini_election_data.csv to election_data.csv")
-
-#csvpath = os.path.join('Resources', 'election_data.csv')
-csvpath = os.path.join('Resources', 'mini_election_data.csv')
 
 with open(csvpath, encoding='utf-8') as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
@@ -44,41 +51,48 @@ with open(csvpath, encoding='utf-8') as csvfile:
 
     # Read the header row first (skip this step if there is no header)
     csv_header = next(csvreader) # next consume a row
-    print ("csv_header= ",csv_header)
-    last_row=0
+    #print ("csv_header= ",csv_header)
+
     for row in csvreader:
         total_votes += 1
-        print(f"{row}")
-        print(f"{total_votes}")
-        
+        #print(f"{row}")
+        candidates_lists.append(row[2])
+        if row[2] not in candidates_short_lists:
+            candidates_short_lists.append(row[2])
 
-        # if total_data_months >1:  # Start calculating monthly change values beginning with 2nd row of data
-        #     current_change=(int(row[1])-last_row)
-        #     change_tally+=current_change
-        #     if current_change >0 :  #Determine Greatest Increase
-        #         if current_change>greatest_increase:
-        #             greatest_increase_month=row[0]
-        #             greatest_increase=current_change
-        #     if current_change <0:   #Determine Greatest Decrease
-        #         if current_change<greatest_decrease:
-        #             greatest_decrease_month=row[0]
-        #             greatest_decrease=current_change
-        # last_row=int(row[1])
+#print("candidates_short_lists",candidates_short_lists)
 
-    # Print final financial analysis on screen
-    # print("")
-    # print("Financial Analysis")
-    # print("-----------------------------")
-    # print("Total Months: "+str(total_data_months))
-    # print(f"Total: $"+str(total_net))
-    # average_change=(change_tally/(total_data_months-1)) 
-    # print("Average Change: $"+str(round(average_change,2)))
-    # print("Greatest Increase in Profits: " + str(greatest_increase_month) + " " + str(f"(${greatest_increase})"))
-    # print("Greatest Decrease in Profits: " + str(greatest_decrease_month) + " " + str(f"(${greatest_decrease})"))
-    # print("")
+for i in range(0,len(candidates_short_lists)):
+    current_count=0
+    for j in range(0,len(candidates_lists)):
+        if candidates_short_lists[i] == candidates_lists[j]:
+            current_count += 1
+         
+    candidates_count_lists.append(current_count)
+    #print("candidates_count_lists=",candidates_count_lists)
+
+find_max_votes = 0
+for i in range(0,len(candidates_short_lists)):
+    candidates_percent_lists.append((candidates_count_lists[i] / total_votes)*100.0)
+    #print("candidates_percent_lists[i]=", (round(candidates_percent_lists[i],5)))
+    if candidates_count_lists[i] > max_votes:
+        max_votes = candidates_count_lists[i]
+        max_votes_index = i
+
+# Print out resluts formated per the instructions
+print("Election Results")
+print("-------------------------")
+print("Total Votes: ",total_votes)
+print("-------------------------")
+for i in range(0,len(candidates_short_lists)):
+    print(f"{candidates_short_lists[i]}:", f"{candidates_percent_lists[i]:.3f}%",f"({candidates_count_lists[i]})")
+print("-------------------------")
+print("Winner: ",candidates_short_lists[max_votes_index])
+print("-------------------------")
+
 
 # save the output.txt file path
-output_file = os.path.join('analysis', "output.txt")
+#output_file = os.path.join('analysis', "output.txt")
 
 # open the output.txt file and then write the finicial analysis to the txt file
 # with open(output_file, "w", encoding='utf-8', newline='') as datafile:
