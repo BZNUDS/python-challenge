@@ -42,8 +42,9 @@ max_votes_index=0
 winner=""
 
 #csvpath = os.path.join('Resources', 'mini_election_data.csv')  #Brian's test file
+#print("need to chage, using mini_election_data.csv for testing puposes")
 csvpath = os.path.join('Resources', 'election_data.csv')
-print("")
+#print("")
 
 with open(csvpath, encoding='utf-8') as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
@@ -80,19 +81,31 @@ for i in range(0,len(candidates_short_lists)):
         max_votes_index = i
 
 # Print out resluts formated per the instructions
-print("Election Results")
-print("-------------------------")
-print("Total Votes: ",total_votes)
-print("-------------------------")
+# print(f"Election Results")
+# print("-------------------------")
+# print(f"Total Votes: ",total_votes)
+# print(f"-------------------------")
+# for i in range(0,len(candidates_short_lists)):
+#     print(f"{candidates_short_lists[i]}:", f"{candidates_percent_lists[i]:.3f}%",f"({candidates_count_lists[i]})")
+# print(f"-------------------------")
+# print(f"Winner: ",candidates_short_lists[max_votes_index])
+# print(f"-------------------------")
+output = (
+    f"Election Results\n"
+    f"-------------------------\n"
+    f"Total Votes: {total_votes}\n"
+    f"-------------------------\n")
+
 for i in range(0,len(candidates_short_lists)):
-    print(f"{candidates_short_lists[i]}:", f"{candidates_percent_lists[i]:.3f}%",f"({candidates_count_lists[i]})")
-print("-------------------------")
-print("Winner: ",candidates_short_lists[max_votes_index])
-print("-------------------------")
-
-
+    output=output+(f"{candidates_short_lists[i]}: {candidates_percent_lists[i]:.3f}% ({candidates_count_lists[i]})\n")
+    #print(f"{candidates_short_lists[i]}: {candidates_percent_lists[i]:.3f}% ({candidates_count_lists[i]})")
+output=output+(f"-------------------------\n")
+output=output+(f"Winner: {candidates_short_lists[max_votes_index]}\n")
+output=output+(f"-------------------------\n")
+    
+print(output)
 # save the output.txt file path
-#output_file = os.path.join('analysis', "output.txt")
+output_file = os.path.join('analysis', "output.txt")
 
 # open the output.txt file and then write the finicial analysis to the txt file
 # with open(output_file, "w", encoding='utf-8', newline='') as datafile:
@@ -104,3 +117,12 @@ print("-------------------------")
 #      writer.writerow(["Average Change: $"+str(round(average_change,2))])
 #      writer.writerow(["Greatest Increase in Profits: " + str(greatest_increase_month) + " " + str(f"(${greatest_increase})")])
 #      writer.writerow(["Greatest Decrease in Profits: " + str(greatest_decrease_month) + " " + str(f"(${greatest_decrease})")])
+# print(f"Election Results")
+# print("-------------------------")
+# print(f"Total Votes: ",total_votes)
+# print(f"-------------------------")
+# for i in range(0,len(candidates_short_lists)):
+#     print(f"{candidates_short_lists[i]}:", f"{candidates_percent_lists[i]:.3f}%",f"({candidates_count_lists[i]})")
+# print(f"-------------------------")
+# print(f"Winner: ",candidates_short_lists[max_votes_index])
+# print(f"-------------------------")
