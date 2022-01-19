@@ -7,10 +7,10 @@ Both of these challenges encompass a real-world situation where your newfound Py
 Before You Begin
 
 
-I create a new repository for this project called python-challenge. 
+I created a new repository for this project called python-challenge. 
 
 
-I clone the new repository to my computer.
+I cloned the new repository to my computer.
 
 
 Inside my local git repository, I created a directory for PyBank and and a directory for PyPoll 
@@ -54,13 +54,13 @@ Average  Change: $-2315.12
 Greatest Increase in Profits: Feb-2012 ($1926159)
 Greatest Decrease in Profits: Sep-2013 ($-2196167)
 
-
 In addition, our final script should both print the analysis to the terminal and export a text file with the results.
+My "analysis" folder within PyBank contains my output.txt text file that has the results from my analysis. It also has some screenshots of my work. 
+
 
 
 
 PyPoll
-
 
 
 In this challenge, we are tasked with helping a small, rural town modernize its vote counting process.
@@ -92,9 +92,10 @@ Winner: Khan
 -------------------------
 
 In addition, our final script should both print the analysis to the terminal and export a text file with the results.
+My "analysis" folder within PyPoll contains my output.txt text file that has the results from my analysis. It also has some screenshots of my work. 
 
 
-Hints and Considerations
+Hints and Considerations we were given:
 
 Consider what we've learned so far. To date, we've learned how to import modules like csv; to read and write files in various formats; to store contents in variables, lists, and dictionaries; to iterate through basic data structures; and to debug along the way. Using what we've learned, try to break down your tasks into discrete mini-objectives. This will be a much better course of action than spending all your time looking for a solution on Stack Overflow.
 
