@@ -2,28 +2,23 @@
 Python Homework - Py Me Up, Charlie
 
 In this homework assignment, I will be using the concepts learned to complete the two Python Challenges, PyBank and PyPoll.
-Both of these challenges encompass a real-world situation where your newfound Python scripting skills can come in handy. These challenges are far from easy so expect some hard work ahead!
+Both of these challenges encompass a real-world situation where your newfound Python scripting skills can come in handy. 
 
-Before You Begin
-
+Before Beginning:
 
 I created a new repository for this project called python-challenge. 
 
-
 I cloned the new repository to my computer.
 
-
 Inside my local git repository, I created a directory for PyBank and and a directory for PyPoll 
-
 
 Inside of each folder, I added the following:
 
 A new file called main.py. This will be the main script to run for each analysis.
 A "Resources" folder that contains the CSV files you used (making sure my script has the correct path to this CSV file.)
-An "analysis" folder that contains my output.txt text file that has the results from your analysis.
+An "analysis" folder that contains my output.txt text file that has the results from my analysis.
 
-
-Pushed the above changes to GitHub or GitLab.
+Pushed the above changes to GitHub via the VS Terminal.
 
 
 
@@ -55,7 +50,7 @@ Greatest Increase in Profits: Feb-2012 ($1926159)
 Greatest Decrease in Profits: Sep-2013 ($-2196167)
 
 In addition, our final script should both print the analysis to the terminal and export a text file with the results.
-My "analysis" folder within PyBank contains my output.txt text file that has the results from my analysis. It also has some screenshots of my work. 
+My "analysis" folder within PyBank contains my output.txt text file that has the results from my analysis. It also has some screenshots of my work in a .docx file. 
 
 
 
@@ -92,7 +87,7 @@ Winner: Khan
 -------------------------
 
 In addition, our final script should both print the analysis to the terminal and export a text file with the results.
-My "analysis" folder within PyPoll contains my output.txt text file that has the results from my analysis. It also has some screenshots of my work. 
+My "analysis" folder within PyPoll contains my output.txt text file that has the results from my analysis. It also has some screenshots of my work in a .docx file. 
 
 
 Hints and Considerations we were given:
